@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>First JavaScript Page</title>
-        <h1>Pass phrase by Pooja Vankineni</h1>
-    </head>
- 
+ <head>
+     <title>First JavaScript Page</title>
+     <h1>Pass phrase by Pooja Vankineni</h1> 
+     
+ </head>
 <body>
-
 <h2>Getting input</h2>
-
 <div class="container">
     <form>
-        <label for="form1_age">Enter the secret phrase </label>
-        <input type="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value="Let me in"> <br>
+        <label for="form_age">Enter the secret phrase </label>
+        <input type="password" id="form_age" name="form_age" min=10 max=50 step=2 value="Let me in"> <br>
 
-        <label for="form1_nick">Enter a phrase </label>
-        <input type="text" id="form1_nick" name="form1_nick" autofocus> <br>
+        <label for="form_nick">Enter a phrase </label>
+        <input type="text" id="form_nick" name="form_nick" autofocus> <br>
 
         <input type="button" onclick="processPhrase()" value="Check the phrase">
     </form>
 </div>
-
 <div class="container">
     <p id="result">This text will be replaced </p>
+</div>
+<div class="container">
+    <img src="African_Bush_Elephant.jpg" id="image" onclick="newImage()" width="200px" height="200px">
 </div>
 
 <script>
@@ -31,8 +31,8 @@
 
     function processPhrase() {
         console.log("Getting form values")
-        password = document.getElementById("form1_age").value
-        guess = document.getElementById("form1_nick").value
+        password = document.getElementById("form_age").value
+        guess = document.getElementById("form_nick").value
 
         out = document.getElementById("result")
         if (password == guess) {
@@ -46,6 +46,30 @@
         }
     }
 </script>
+<script>
+    var usingImage=1;
+    function newImage()
+    {
+    switch(usingImage)
+    {
+        case 1:
+                document.getElementById("image").src = "Nigerian_Goat.jpg";
+                usingImage=2;
+                break;
+        case 2:
+                document.getElementById("image").src = "African_Bush_Elephant.jpg";
+                usingImage=3;
+                break;
+        case 3:
+                document.getElementById("image").src = "Vervet_Monkey.jpg";
+                usingImage=1;
+                break;
+        default:
+                document.getElementById("image").src = "African_Bush_Elephant.jpg";
+        
+    }
+}
+</script>
 
 </body>
-</html> 
+</html>
